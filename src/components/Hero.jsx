@@ -30,7 +30,7 @@ export default function Hero() {
         position: 'relative',
         display: 'flex',
         alignItems: 'center',
-        overflow: 'hidden'
+        overflowX: 'hidden'
       }}
     >
       {/* Background Neon Ambient Orbs */}
@@ -144,7 +144,14 @@ export default function Hero() {
 
           {/* Avatar Image Column */}
           <div style={{ gridColumn: 'span 12' }} className="hero-img-col">
-            <div style={{ position: 'relative', maxWidth: '440px', margin: '0 auto' }}>
+            {/* paddingBottom+paddingLeft absorb the floating badge overflow so it never clips */}
+            <div style={{
+              position: 'relative',
+              maxWidth: '440px',
+              margin: '0 auto',
+              paddingBottom: '48px',
+              paddingLeft: '16px'
+            }}>
               
               {/* Dual Tone Glow Frame */}
               <div className="neon-avatar-frame">
@@ -161,11 +168,11 @@ export default function Hero() {
                 />
               </div>
 
-              {/* Floating Floating Pill Badges */}
+              {/* Floating Pill Badge — uses bottom/left within padding space so it never overflows */}
               <div className="glass-panel" style={{
                 position: 'absolute',
-                bottom: '-20px',
-                left: '-20px',
+                bottom: '0px',
+                left: '0px',
                 padding: '12px 20px',
                 borderRadius: '14px',
                 display: 'flex',
