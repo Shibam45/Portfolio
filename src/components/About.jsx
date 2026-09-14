@@ -93,7 +93,7 @@ export default function About() {
               </div>
 
               {/* IDE Code Content */}
-              <div style={{ padding: '24px', fontFamily: 'var(--font-mono)', fontSize: '0.9rem', lineHeight: 1.7, color: '#e2e8f0' }}>
+              <div className="ide-code-block" style={{ padding: '24px', fontFamily: 'var(--font-mono)', fontSize: '0.9rem', lineHeight: 1.7, color: '#e2e8f0', overflowX: 'auto' }}>
                 <div><span style={{ color: '#ff79c6' }}>const</span> <span style={{ color: '#50fa7b' }}>developer</span> = &#123;</div>
                 <div style={{ paddingLeft: '20px' }}>
                   <span style={{ color: '#8be9fd' }}>name:</span> <span style={{ color: '#f1fa8c' }}>"{PORTFOLIO_DATA.personal.name}"</span>,

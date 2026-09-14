@@ -60,7 +60,7 @@ export default function Hero() {
           
           {/* Text & Introduction Column */}
           <div style={{ gridColumn: 'span 12' }} className="hero-text-col">
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '20px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '20px' }} className="hero-badge-row">
               <div className="badge-neon-pink">
                 <Sparkles size={14} color="#ff0055" />
                 WELCOME TO MY PORTFOLIO
@@ -86,12 +86,12 @@ export default function Hero() {
               <span style={{ animation: 'pulseGlow 1s infinite', color: '#ff0055' }}>_</span>
             </div>
 
-            <p style={{ fontSize: '1.1rem', color: 'var(--text-muted)', maxWidth: '620px', marginBottom: '32px', lineHeight: 1.7 }}>
+            <p style={{ fontSize: '1.1rem', color: 'var(--text-muted)', maxWidth: '620px', marginBottom: '32px', lineHeight: 1.7 }} className="hero-desc">
               {PORTFOLIO_DATA.personal.tagline}. {PORTFOLIO_DATA.personal.bio}
             </p>
 
             {/* Action Buttons */}
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px', marginBottom: '40px' }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px', marginBottom: '40px' }} className="hero-btn-row">
               <a href="#projects" className="btn-neon-primary">
                 Explore Projects
                 <ArrowRight size={18} />
@@ -107,7 +107,7 @@ export default function Hero() {
             </div>
 
             {/* Social Icons */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }} className="hero-social-row">
               <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)', fontFamily: 'var(--font-mono)' }}>CONNECT:</span>
               <a href={PORTFOLIO_DATA.personal.github} target="_blank" rel="noreferrer" style={{
                 color: 'var(--text-muted)',
@@ -206,7 +206,14 @@ export default function Hero() {
       <style>{`
         @media (min-width: 992px) {
           .hero-text-col { grid-column: span 7 !important; }
-          .hero-img-col { grid-column: span 5 !important; }
+          .hero-img-col  { grid-column: span 5 !important; }
+        }
+        /* ── Mobile centering for hero text block ── */
+        @media (max-width: 768px) {
+          .hero-badge-row { justify-content: center; }
+          .hero-desc      { max-width: 100% !important; text-align: center; }
+          .hero-btn-row   { justify-content: center; }
+          .hero-social-row{ justify-content: center; }
         }
         .social-icon:hover {
           color: #00f3ff !important;

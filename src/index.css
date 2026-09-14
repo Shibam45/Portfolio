@@ -295,3 +295,109 @@ section {
   scroll-margin-top: 100px;
 }
 
+/* ─────────────────────────────────────────
+   GLOBAL MOBILE OVERFLOW GUARD
+   Prevents ANY child from causing horizontal scroll.
+   Positioned absolute orbs/decorations are fine because
+   the nearest overflow:hidden ancestor clips them.
+───────────────────────────────────────── */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+/* ─────────────────────────────────────────
+   RESPONSIVE: ≤ 768 px  (phones)
+───────────────────────────────────────── */
+@media (max-width: 768px) {
+
+  /* Tighten section vertical padding */
+  section {
+    padding-top: 70px !important;
+    padding-bottom: 70px !important;
+  }
+
+  /* Section title scaling */
+  .section-title {
+    font-size: 1.8rem !important;
+  }
+
+  .section-subtitle {
+    font-size: 0.95rem !important;
+  }
+
+  /* Hero adjustments */
+  #home {
+    padding-top: 100px !important;
+    padding-bottom: 60px !important;
+    text-align: center;
+  }
+
+  /* Center social icons row on mobile */
+  #home .hero-social-row {
+    justify-content: center;
+  }
+
+  /* Make buttons stack on very small screens */
+  .btn-neon-primary,
+  .btn-neon-secondary,
+  .btn-neon-ghost {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Skills grid: single column on phones */
+  #skills [style*="minmax(280px"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* IDE code block: allow horizontal scroll within the box,
+     but don't let it escape the card boundary */
+  .ide-code-block {
+    overflow-x: auto !important;
+    white-space: pre !important;
+  }
+
+  /* Experience timeline: reduce left indent so card fits */
+  #experience [style*="paddingLeft: '64px'"] {
+    padding-left: 52px !important;
+  }
+
+  /* Modal: full width with small margin */
+  .modal-content {
+    border-radius: 14px !important;
+    max-height: 85vh !important;
+  }
+
+  /* Footer: stack items vertically */
+  footer > div > div {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+}
+
+/* ─────────────────────────────────────────
+   RESPONSIVE: ≤ 480 px  (very small phones)
+───────────────────────────────────────── */
+@media (max-width: 480px) {
+
+  .section-title {
+    font-size: 1.55rem !important;
+  }
+
+  /* Shrink category tab buttons so they don't overflow */
+  #skills button {
+    padding: 8px 14px !important;
+    font-size: 0.82rem !important;
+  }
+
+  /* Experience card inner padding */
+  #experience .glass-panel {
+    padding: 18px !important;
+  }
+
+  /* Reduce hero name font a touch more */
+  #home h1 {
+    font-size: clamp(2rem, 8vw, 3rem) !important;
+  }
+}
