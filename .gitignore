@@ -3,8 +3,9 @@ node_modules/
 .pnpm-store/
 
 # Production Build
-# dist/ (kept for GitHub Pages manual deployment)
+dist/        # Vercel auto-builds this — do NOT commit
 dist-ssr/
+# docs/ is intentionally tracked (GitHub Pages source)
 *.local
 
 # Logs & Environment

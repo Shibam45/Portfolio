@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "build:github": "vite build --base=/Portfolio/",
+    "build:github": "vite build --config vite.github.config.js",
     "preview": "vite preview"
   },
   "dependencies": {
