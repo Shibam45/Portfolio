@@ -3,7 +3,7 @@ node_modules/
 .pnpm-store/
 
 # Production Build
-dist/
+# dist/ (kept for GitHub Pages manual deployment)
 dist-ssr/
 *.local
 
