@@ -20,6 +20,7 @@ yarn-error.log*
 # Temporary / OS
 .DS_Store
 Thumbs.db
+*.zip
 temp_sample/
 temp_test/
 temp_portfolio_test/

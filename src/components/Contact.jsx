@@ -49,7 +49,7 @@ export default function Contact() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(12, 1fr)', gap: '40px' }}>
           
           {/* Left Info Column */}
-          <div style={{ gridColumn: 'span 12' }} className="contact-col-left">
+          <div style={{ gridColumn: 'span 12', minWidth: 0 }} className="contact-col-left">
             <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
               
               <div className="glass-panel" style={{ padding: '24px', borderRadius: '18px' }}>
@@ -59,11 +59,12 @@ export default function Contact() {
                     borderRadius: '12px',
                     background: 'rgba(0, 243, 255, 0.1)',
                     border: '1px solid rgba(0, 243, 255, 0.3)',
-                    color: '#00f3ff'
+                    color: '#00f3ff',
+                    flexShrink: 0
                   }}>
                     <Mail size={22} />
                   </div>
-                  <div>
+                  <div style={{ minWidth: 0, flex: 1, overflowWrap: 'anywhere' }}>
                     <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>DIRECT EMAIL</div>
                     <div style={{ fontSize: '1rem', fontWeight: 700, color: '#ffffff' }}>
                       {PORTFOLIO_DATA.personal.email}
@@ -74,7 +75,7 @@ export default function Contact() {
                 <button
                   onClick={handleCopyEmail}
                   className="btn-neon-ghost"
-                  style={{ width: '100%', justifyContent: 'center', fontSize: '0.88rem' }}
+                  style={{ width: '100%', maxWidth: '100%', minWidth: 0, boxSizing: 'border-box', justifyContent: 'center', fontSize: '0.88rem' }}
                 >
                   {copied ? <Check size={16} color="#00f3ff" /> : <Copy size={16} />}
                   {copied ? 'Copied to Clipboard!' : 'Copy Email Address'}
@@ -88,11 +89,12 @@ export default function Contact() {
                     borderRadius: '12px',
                     background: 'rgba(255, 0, 85, 0.1)',
                     border: '1px solid rgba(255, 0, 85, 0.3)',
-                    color: '#ff0055'
+                    color: '#ff0055',
+                    flexShrink: 0
                   }}>
                     <MapPin size={22} />
                   </div>
-                  <div>
+                  <div style={{ minWidth: 0, flex: 1, overflowWrap: 'anywhere' }}>
                     <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>LOCATION</div>
                     <div style={{ fontSize: '1rem', fontWeight: 700, color: '#ffffff' }}>
                       {PORTFOLIO_DATA.personal.location}
@@ -123,20 +125,24 @@ export default function Contact() {
           </div>
 
           {/* Right Contact Form Column */}
-          <div style={{ gridColumn: 'span 12' }} className="contact-col-right">
+          <div style={{ gridColumn: 'span 12', minWidth: 0 }} className="contact-col-right">
             <form onSubmit={handleSubmit} className="glass-panel" style={{
               padding: '32px',
               borderRadius: '20px',
               display: 'flex',
               flexDirection: 'column',
-              gap: '20px'
+              gap: '20px',
+              width: '100%',
+              maxWidth: '100%',
+              minWidth: 0,
+              boxSizing: 'border-box'
             }}>
               <h3 style={{ fontSize: '1.4rem', fontWeight: 800, color: '#ffffff', marginBottom: '4px' }}>
                 Send a Message
               </h3>
 
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }} className="form-row">
-                <div>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', minWidth: 0 }} className="form-row">
+                <div style={{ minWidth: 0 }}>
                   <label style={{ display: 'block', fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '6px', fontFamily: 'var(--font-mono)' }}>
                     YOUR NAME *
                   </label>
@@ -148,6 +154,9 @@ export default function Contact() {
                     placeholder="Jane Doe"
                     style={{
                       width: '100%',
+                      maxWidth: '100%',
+                      minWidth: 0,
+                      boxSizing: 'border-box',
                       padding: '12px 16px',
                       borderRadius: '10px',
                       background: 'rgba(6, 9, 19, 0.8)',
@@ -159,7 +168,7 @@ export default function Contact() {
                   />
                 </div>
 
-                <div>
+                <div style={{ minWidth: 0 }}>
                   <label style={{ display: 'block', fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '6px', fontFamily: 'var(--font-mono)' }}>
                     EMAIL ADDRESS *
                   </label>
@@ -171,6 +180,9 @@ export default function Contact() {
                     placeholder="jane@company.com"
                     style={{
                       width: '100%',
+                      maxWidth: '100%',
+                      minWidth: 0,
+                      boxSizing: 'border-box',
                       padding: '12px 16px',
                       borderRadius: '10px',
                       background: 'rgba(6, 9, 19, 0.8)',
@@ -183,7 +195,7 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div>
+              <div style={{ minWidth: 0 }}>
                 <label style={{ display: 'block', fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '6px', fontFamily: 'var(--font-mono)' }}>
                   SUBJECT
                 </label>
@@ -194,6 +206,9 @@ export default function Contact() {
                   placeholder="Project Inquiry / Job Opportunity"
                   style={{
                     width: '100%',
+                    maxWidth: '100%',
+                    minWidth: 0,
+                    boxSizing: 'border-box',
                     padding: '12px 16px',
                     borderRadius: '10px',
                     background: 'rgba(6, 9, 19, 0.8)',
@@ -205,7 +220,7 @@ export default function Contact() {
                 />
               </div>
 
-              <div>
+              <div style={{ minWidth: 0 }}>
                 <label style={{ display: 'block', fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '6px', fontFamily: 'var(--font-mono)' }}>
                   MESSAGE *
                 </label>
@@ -217,6 +232,9 @@ export default function Contact() {
                   placeholder="Hello! I'd love to talk about building..."
                   style={{
                     width: '100%',
+                    maxWidth: '100%',
+                    minWidth: 0,
+                    boxSizing: 'border-box',
                     padding: '12px 16px',
                     borderRadius: '10px',
                     background: 'rgba(6, 9, 19, 0.8)',
@@ -229,7 +247,7 @@ export default function Contact() {
                 />
               </div>
 
-              <button type="submit" className="btn-neon-primary" style={{ justifyContent: 'center', marginTop: '8px' }}>
+              <button type="submit" className="btn-neon-primary" style={{ justifyContent: 'center', marginTop: '8px', maxWidth: '100%', minWidth: 0, boxSizing: 'border-box' }}>
                 <Send size={18} />
                 Send Message
               </button>

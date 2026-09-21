@@ -97,8 +97,8 @@ export default function Experience() {
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginBottom: '20px' }}>
                   {item.achievements.map((ach, aIdx) => (
                     <div key={aIdx} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
-                      <CheckCircle2 size={18} color="#00f3ff" style={{ marginTop: '2px', shrink: 0 }} />
-                      <span style={{ fontSize: '0.92rem', color: '#cbd5e1' }}>{ach}</span>
+                      <CheckCircle2 size={18} color="#00f3ff" style={{ marginTop: '2px', flexShrink: 0 }} />
+                      <span style={{ fontSize: '0.92rem', color: '#cbd5e1', minWidth: 0, flex: 1, overflowWrap: 'anywhere' }}>{ach}</span>
                     </div>
                   ))}
                 </div>

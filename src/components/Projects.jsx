@@ -62,7 +62,7 @@ export default function Projects() {
         {/* Projects Cards Grid */}
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fill, minmax(min(340px, 100%), 1fr))',
           gap: '30px'
         }}>
           {filteredProjects.map((project) => (
@@ -73,7 +73,8 @@ export default function Projects() {
                 borderRadius: '20px',
                 overflow: 'hidden',
                 display: 'flex',
-                flexDirection: 'column'
+                flexDirection: 'column',
+                minWidth: 0
               }}
             >
               {/* Project Image Banner */}

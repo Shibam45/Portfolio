@@ -64,7 +64,7 @@ export default function About() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(12, 1fr)', gap: '40px', alignItems: 'center' }}>
           
           {/* IDE Window Box */}
-          <div style={{ gridColumn: 'span 12' }} className="about-col-left">
+          <div style={{ gridColumn: 'span 12', minWidth: 0 }} className="about-col-left">
             <div style={{
               borderRadius: '16px',
               overflow: 'hidden',
@@ -123,7 +123,7 @@ export default function About() {
           </div>
 
           {/* Philosophy Highlights */}
-          <div style={{ gridColumn: 'span 12' }} className="about-col-right">
+          <div style={{ gridColumn: 'span 12', minWidth: 0 }} className="about-col-right">
             <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
               {PORTFOLIO_DATA.aboutHighlights.map((item, idx) => (
                 <div key={idx} className="glass-panel" style={{
@@ -138,11 +138,11 @@ export default function About() {
                     borderRadius: '12px',
                     background: idx === 0 ? 'rgba(0, 243, 255, 0.1)' : idx === 1 ? 'rgba(255, 0, 85, 0.1)' : 'rgba(168, 85, 247, 0.1)',
                     border: `1px solid ${idx === 0 ? 'rgba(0, 243, 255, 0.3)' : idx === 1 ? 'rgba(255, 0, 85, 0.3)' : 'rgba(168, 85, 247, 0.3)'}`,
-                    shrink: 0
+                    flexShrink: 0
                   }}>
                     {idx === 0 ? <Shield size={22} color="#00f3ff" /> : idx === 1 ? <Zap size={22} color="#ff0055" /> : <Layers size={22} color="#a855f7" />}
                   </div>
-                  <div>
+                  <div style={{ minWidth: 0, flex: 1, overflowWrap: 'anywhere', wordBreak: 'break-word' }}>
                     <h3 style={{ fontSize: '1.15rem', fontWeight: 700, marginBottom: '6px', color: '#ffffff' }}>
                       {item.title}
                     </h3>

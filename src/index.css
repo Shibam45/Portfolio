@@ -19,19 +19,29 @@
   --font-mono: 'Fira Code', monospace;
 }
 
-* {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  scroll-behavior: smooth;
+}
+
+html, body, #root {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body {
   background-color: var(--bg-dark);
   color: var(--text-main);
   font-family: var(--font-body);
-  overflow-x: hidden;
   line-height: 1.6;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 /* Custom Scrollbar */
@@ -296,17 +306,6 @@ section {
 }
 
 /* ─────────────────────────────────────────
-   GLOBAL MOBILE OVERFLOW GUARD
-   Prevents ANY child from causing horizontal scroll.
-   Positioned absolute orbs/decorations are fine because
-   the nearest overflow:hidden ancestor clips them.
-───────────────────────────────────────── */
-html, body {
-  overflow-x: hidden;
-  max-width: 100%;
-}
-
-/* ─────────────────────────────────────────
    RESPONSIVE: ≤ 768 px  (phones)
 ───────────────────────────────────────── */
 @media (max-width: 768px) {
@@ -338,10 +337,17 @@ html, body {
     justify-content: center;
   }
 
-  /* Make buttons stack on very small screens */
-  .btn-neon-primary,
-  .btn-neon-secondary,
-  .btn-neon-ghost {
+  .hero-role-text {
+    justify-content: center;
+  }
+
+  /* Scope full-width buttons only to Hero and Contact sections */
+  #home .btn-neon-primary,
+  #home .btn-neon-secondary,
+  #home .btn-neon-ghost,
+  #contact .btn-neon-primary,
+  #contact .btn-neon-secondary,
+  #contact .btn-neon-ghost {
     width: 100%;
     justify-content: center;
   }

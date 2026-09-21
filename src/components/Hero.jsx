@@ -57,9 +57,9 @@ export default function Hero() {
 
       <div style={{ maxWidth: '1240px', margin: '0 auto', padding: '0 24px', width: '100%', position: 'relative', zIndex: 1 }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(12, 1fr)', gap: '40px', alignItems: 'center' }}>
-          
+
           {/* Text & Introduction Column */}
-          <div style={{ gridColumn: 'span 12' }} className="hero-text-col">
+          <div style={{ gridColumn: 'span 12', minWidth: 0 }} className="hero-text-col">
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '20px' }} className="hero-badge-row">
               <div className="badge-neon-pink">
                 <Sparkles size={14} color="#ff0055" />
@@ -67,11 +67,11 @@ export default function Hero() {
               </div>
             </div>
 
-            <h1 style={{ fontSize: 'clamp(2.5rem, 5vw, 4.2rem)', fontWeight: 900, lineHeight: 1.1, marginBottom: '16px' }}>
+            <h1 style={{ fontSize: 'clamp(2.5rem, 5vw, 4.2rem)', fontWeight: 900, lineHeight: 1.1, marginBottom: '16px', wordBreak: 'break-word' }}>
               Hi, I'm <span className="gradient-text-cyan-pink">{PORTFOLIO_DATA.personal.name}</span>
             </h1>
 
-            <div style={{
+            <div className="hero-role-text" style={{
               fontSize: 'clamp(1.2rem, 2.5vw, 1.8rem)',
               fontFamily: 'var(--font-mono)',
               color: 'var(--cyan-glow)',
@@ -79,7 +79,8 @@ export default function Hero() {
               display: 'flex',
               alignItems: 'center',
               gap: '8px',
-              minHeight: '2.4rem'
+              minHeight: '2.4rem',
+              flexWrap: 'wrap'
             }}>
               <span>&gt;</span>
               <span>{typedText}</span>
@@ -91,7 +92,7 @@ export default function Hero() {
             </p>
 
             {/* Action Buttons */}
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px', marginBottom: '40px' }} className="hero-btn-row">
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px', marginBottom: '40px'}} className="hero-btn-row">
               <a href="#projects" className="btn-neon-primary">
                 Explore Projects
                 <ArrowRight size={18} />
@@ -143,7 +144,7 @@ export default function Hero() {
           </div>
 
           {/* Avatar Image Column */}
-          <div style={{ gridColumn: 'span 12' }} className="hero-img-col">
+          <div style={{ gridColumn: 'span 12', minWidth: 0 }} className="hero-img-col">
             {/* paddingBottom+paddingLeft absorb the floating badge overflow so it never clips */}
             <div style={{
               position: 'relative',
@@ -152,7 +153,7 @@ export default function Hero() {
               paddingBottom: '48px',
               paddingLeft: '16px'
             }}>
-              
+
               {/* Dual Tone Glow Frame */}
               <div className="neon-avatar-frame">
                 <img
@@ -177,7 +178,8 @@ export default function Hero() {
                 borderRadius: '14px',
                 display: 'flex',
                 alignItems: 'center',
-                gap: '12px'
+                gap: '12px',
+                maxWidth: 'calc(100% - 16px)'
               }}>
                 <div style={{
                   width: '36px',
