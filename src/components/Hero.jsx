@@ -156,8 +156,8 @@ export default function Hero() {
               {/* Dual Tone Glow Frame */}
               <div className="neon-avatar-frame">
                 <img
-                  src={PORTFOLIO_DATA.personal.avatar}
-                  alt={PORTFOLIO_DATA.personal.name}
+                  src={`${import.meta.env.BASE_URL}hero.png`}
+                  alt="Shibam Ghosh"
                   style={{
                     width: '100%',
                     height: 'auto',
