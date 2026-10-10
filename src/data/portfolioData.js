@@ -10,7 +10,7 @@ export const PORTFOLIO_DATA = {
     github: "https://github.com/Shibam45",
     linkedin: "https://www.linkedin.com/in/shibamghosh/",
     twitter: "https://x.com/ShibamG950551",
-    resumeUrl: "#",
+    resumeUrl:"",
     avatar: "/hero.png"
   },
 
@@ -48,7 +48,7 @@ export const PORTFOLIO_DATA = {
     { name: "Multithreading & Concurrency", category: "java", level: 88, icon: "Cpu" },
     { name: "JDBC", category: "backend", level: 88, icon: "Server" },
     { name: "MySQL", category: "backend", level: 90, icon: "Database" },
-    { name: "Spring / Spring Boot (Learning)", category: "backend", level: 75, icon: "Layers" },
+    { name: "Spring / Spring Boot", category: "backend", level: 75, icon: "Layers" },
     { name: "React.js", category: "frontend", level: 92, icon: "Code" },
     { name: "JavaScript (ES6+)", category: "frontend", level: 90, icon: "FileCode" },
     { name: "HTML5 / CSS3 / Tailwind", category: "frontend", level: 88, icon: "Palette" },

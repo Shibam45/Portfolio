@@ -67,7 +67,7 @@ export default function Hero() {
               </div>
             </div>
 
-            <h1 style={{ fontSize: 'clamp(2.5rem, 5vw, 4.2rem)', fontWeight: 900, lineHeight: 1.1, marginBottom: '16px', wordBreak: 'break-word' }}>
+            <h1 style={{ fontSize: 'clamp(1rem, 3vw, 4.2rem)', fontWeight: 900, lineHeight: 1.1, marginBottom: '16px', wordBreak: 'break-word' }}>
               Hi, I'm <span className="gradient-text-cyan-pink">{PORTFOLIO_DATA.personal.name}</span>
             </h1>
 
@@ -145,13 +145,12 @@ export default function Hero() {
 
           {/* Avatar Image Column */}
           <div style={{ gridColumn: 'span 12', minWidth: 0 }} className="hero-img-col">
-            {/* paddingBottom+paddingLeft absorb the floating badge overflow so it never clips */}
             <div style={{
               position: 'relative',
               maxWidth: '440px',
               margin: '0 auto',
               paddingBottom: '48px',
-              paddingLeft: '16px'
+              paddingLeft: '16px',
             }}>
 
               {/* Dual Tone Glow Frame */}

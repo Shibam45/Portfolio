@@ -5,9 +5,5 @@ import react from '@vitejs/plugin-react'
 // IMPORTANT: Replace 'Portfolio-Website' below with your EXACT GitHub repository name
 export default defineConfig({
   plugins: [react()],
-  base: '/', // Vercel deployment (root path)
-  server: {
-    port: 3000,
-    open: false
-  }
+  base: '/Portfolio/', // Vercel deployment (root path)
 })
