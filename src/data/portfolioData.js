@@ -11,7 +11,7 @@ export const PORTFOLIO_DATA = {
     linkedin: "https://www.linkedin.com/in/shibamghosh/",
     twitter: "https://x.com/ShibamG950551",
     resumeUrl:"",
-    avatar: "/hero.png"
+    avatar: `${import.meta.env.BASE_URL}hero.png`
   },
 
   stats: [
